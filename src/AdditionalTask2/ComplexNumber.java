@@ -12,7 +12,6 @@ public final class ComplexNumber {
     public int hashCode1() {
         return (Double.hashCode(im) + Double.hashCode(re));
     }
-
     public int hashCode2() {
         return (Double.hashCode(im) * 29 + Double.hashCode(re) * 33);
 

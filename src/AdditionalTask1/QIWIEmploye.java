@@ -8,14 +8,10 @@ class QIWIEmploye extends Employe {
         this.bonusCondition = bonusCondition;
     }
 
+    @Override
     public int getBonus() {
-        int averageSalary = 0;
-        for (int profit : getProfits()) {
-            averageSalary = averageSalary + profit;
-        }
-        averageSalary = averageSalary / getProfits().length;
         if (bonusCondition) {
-            return averageSalary * 8;
+            return super.getBonus() * 8;
         } else {
             return 0;
         }

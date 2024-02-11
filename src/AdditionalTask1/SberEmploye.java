@@ -1,6 +1,8 @@
 package AdditionalTask1;
 
 class SberEmploye extends Employe {
+    private final double bankCoefficient;
+    private final double ratingCoefficient;
 
     public SberEmploye(int[] profits, double bankCoefficient, double ratingCoefficient) {
         super(profits);
@@ -8,15 +10,7 @@ class SberEmploye extends Employe {
         this.ratingCoefficient = ratingCoefficient;
     }
 
-    private final double bankCoefficient;
-    private final double ratingCoefficient;
-
     public int getBonus() {
-        int averageSalary = 0;
-        for (int profit : getProfits()) {
-            averageSalary = averageSalary + profit;
-        }
-        averageSalary = averageSalary / getProfits().length;
-        return (int) (averageSalary * bankCoefficient * ratingCoefficient);
+        return (int) (super.getBonus() * bankCoefficient * ratingCoefficient);
     }
 }

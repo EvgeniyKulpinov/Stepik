@@ -6,8 +6,14 @@ public class Employe {
     public Employe(int[] profits) {
         this.profits = profits;
     }
+
     public int getBonus() {
-        return 0;
+        int bonus = 0;
+        for (int profit : getProfits()) {
+            bonus = bonus + profit;
+        }
+        bonus = bonus / getProfits().length;
+        return bonus;
     }
 
     public int[] getProfits() {
