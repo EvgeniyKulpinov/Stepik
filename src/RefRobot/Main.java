@@ -28,7 +28,7 @@ public class Main {
         }
     }
 
-    private static Direction searchDirectionsY(Robot robot, int toY) {
+    public static Direction searchDirectionsY(Robot robot, int toY) {
         if (robot.getY() > toY) {
             return Direction.DOWN;
         } else {
@@ -36,7 +36,7 @@ public class Main {
         }
     }
 
-    private static Direction searchDirectionsX(Robot robot, int toX) {
+    public static Direction searchDirectionsX(Robot robot, int toX) {
         if (robot.getX() > toX) {
             return Direction.LEFT;
         } else {
