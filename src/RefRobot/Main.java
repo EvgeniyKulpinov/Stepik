@@ -9,9 +9,9 @@ public class Main {
     }
 
     public static void moveRobot(Robot robot, int toX, int toY) {
-        turn(robot, searchDirectionsY(robot, toY));
+        turn(robot, robot.getY() > toY ? Direction.DOWN : Direction.UP);
         step(robot, Math.abs(robot.getY() - toY));
-        turn(robot, searchDirectionsX(robot, toX));
+        turn(robot, robot.getX() > toX ? Direction.LEFT : Direction.RIGHT);
         step(robot, Math.abs(robot.getX() - toX));
     }
 
@@ -25,22 +25,6 @@ public class Main {
         while (countSteps != 0) {
             robot.stepForward();
             countSteps--;
-        }
-    }
-
-    public static Direction searchDirectionsY(Robot robot, int toY) {
-        if (robot.getY() > toY) {
-            return Direction.DOWN;
-        } else {
-            return Direction.UP;
-        }
-    }
-
-    public static Direction searchDirectionsX(Robot robot, int toX) {
-        if (robot.getX() > toX) {
-            return Direction.LEFT;
-        } else {
-            return Direction.RIGHT;
         }
     }
 }
