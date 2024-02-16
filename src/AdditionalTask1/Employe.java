@@ -19,5 +19,16 @@ public class Employe {
     public int[] getProfits() {
         return profits;
     }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Зарплата: ");
+        for (int profit : profits) {
+            builder.append(profit).append(" ");
+        }
+        builder.append("\nБонус: ");
+        builder.append(getBonus());
+        return builder.toString();
+    }
 }
 

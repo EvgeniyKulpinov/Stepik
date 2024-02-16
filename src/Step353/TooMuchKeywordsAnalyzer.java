@@ -22,9 +22,8 @@ public class TooMuchKeywordsAnalyzer extends KeywordAnalyzer {
     @Override
     public Label processText(String text) {
         String[] words = text.split(" ");
-        int i = 0;
         int counter = 0;
-        while (i < getTooMuchKeywords().length) {
+        for (int i = 0; i < getTooMuchKeywords().length; i++) {
             for (String word : words) {
                 if (word.contains(getTooMuchKeywords()[i])) {
                     counter++;
@@ -33,7 +32,6 @@ public class TooMuchKeywordsAnalyzer extends KeywordAnalyzer {
             if (counter >= maxRepetitions) {
                 return getLabel();
             }
-            i++;
         }
         return Label.OK;
     }

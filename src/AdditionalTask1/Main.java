@@ -1,5 +1,7 @@
 package AdditionalTask1;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         double bankCoefficient = 1.3;
@@ -12,12 +14,7 @@ public class Main {
                 new QIWIEmploye(zp, bonusCondition),
         };
         for (Employe worker : workers) {
-            informationTheEmployee(worker);
+            System.out.println(worker);
         }
-    }
-
-    public static void informationTheEmployee(Employe worker) {
-        System.out.println("Зарплата: " + worker.toString());
-        System.out.println("Бонус: " + worker.getBonus());
     }
 }
