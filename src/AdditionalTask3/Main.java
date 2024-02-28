@@ -28,14 +28,8 @@ public class Main {
 
     public static void writingFile(Path path) throws IOException {
         if (Files.isDirectory(path)) {
-            InputStream input = Files.newInputStream(Paths.get(PATH_TO_PROGRAM));
-            OutputStream output = Files.newOutputStream(Paths.get(path + "\\joke.java"));
-            int byteData;
-            while ((byteData = input.read()) > 0) {
-                output.write(byteData);
-            }
-            input.close();
-            output.close();
+            Path helloWorld = Paths.get(PATH_TO_PROGRAM);
+            Files.copy(helloWorld, Path.of((path + "\\joke.java")));
         }
     }
 }
