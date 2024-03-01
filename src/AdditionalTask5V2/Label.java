@@ -1,5 +1,5 @@
 package AdditionalTask5V2;
 
-enum Label {
+public enum Label {
     ECO_USER, NOT_ECO_USER
 }

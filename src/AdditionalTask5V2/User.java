@@ -9,9 +9,10 @@ public class User {
     public int electroCountDay;
     public int electroCountNight;
 
+    public Label label;
+
     public User() {
     }
-
 
     public int getId() {
         return id;
@@ -41,6 +42,10 @@ public class User {
         return electroCountNight;
     }
 
+    public Label getLabel() {
+        return label;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -67,5 +72,22 @@ public class User {
 
     public void setElectroCountNight(int electroCountNight) {
         this.electroCountNight = electroCountNight;
+    }
+
+    public void setLabel(Label label) {
+        this.label = label;
+    }
+
+    public static User builder(String string) {
+        User user = new User();
+        String[] strings = string.split("\\|");
+        user.setId(Integer.parseInt(strings[0]));
+        user.setName(strings[1]);
+        user.setWaterCountDay(Integer.parseInt(strings[2]));
+        user.setWaterCountNight(Integer.parseInt(strings[3]));
+        user.setGasCount(Integer.parseInt(strings[4]));
+        user.setElectroCountDay(Integer.parseInt(strings[5]));
+        user.setElectroCountNight(Integer.parseInt(strings[6]));
+        return user;
     }
 }
