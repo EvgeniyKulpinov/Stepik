@@ -2,16 +2,14 @@ package AdditionalTask5V2;
 
 import java.util.ArrayList;
 
-public class Analyzer {
-    int maxConsumption;
-    ArrayList<User> users;
-
-    public Analyzer(ArrayList<User> users, int maxConsumption) {
-        this.users = users;
-        this.maxConsumption = maxConsumption;
+public class UserFilterEco extends UserFilter {
+    public UserFilterEco(int maxConsumption) {
+        super(maxConsumption);
     }
 
-    public void analysis() {
+    @Override
+    public ArrayList<User> filter(ArrayList<User> users) {
+        ArrayList<User> users1 = new ArrayList<>();
         for (User user : users) {
             int[] consumptions = {
                     user.getWaterCountDay() + user.getWaterCountNight(),
@@ -20,11 +18,11 @@ public class Analyzer {
             };
             for (int consumption : consumptions) {
                 if (consumption > maxConsumption) {
-                    user.setLabel(Label.NOT_ECO_USER);
                     break;
                 }
-                user.setLabel(Label.ECO_USER);
+                users1.add(user);
             }
         }
+        return users1;
     }
 }

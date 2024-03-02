@@ -6,18 +6,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class DataRecordingFile extends DataRecording {
-    public DataRecordingFile(Path path) {
+public class UserWriterFile extends UserWriter {
+    public UserWriterFile(Path path) {
         super(path);
     }
 
     @Override
     OutputStream output() throws IOException {
         return Files.newOutputStream(Paths.get(path + "\\..\\ecoUser.csv"));
-    }
-
-    @Override
-    Label getLable() {
-        return Label.ECO_USER;
     }
 }

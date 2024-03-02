@@ -5,9 +5,9 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class ReadingDataFile extends ReadingData {
+public class UserReaderFile extends UserReader {
 
-    public ReadingDataFile(Path path) {
+    public UserReaderFile(Path path) {
         super(path);
     }
 

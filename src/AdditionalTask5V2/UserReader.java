@@ -6,16 +6,16 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class ReadingData {
+public abstract class UserReader {
     Path path;
 
-    public ReadingData(Path path) {
+    public UserReader(Path path) {
         this.path = path;
     }
 
     abstract InputStream input() throws IOException;
 
-    public ArrayList<User> processReadingData() throws IOException {
+    public ArrayList<User> read() throws IOException {
         Scanner scanner = new Scanner(input());
         scanner.nextLine();
         ArrayList<User> users = new ArrayList<>();
@@ -25,6 +25,5 @@ public abstract class ReadingData {
         }
         return users;
     }
-
 }
 
