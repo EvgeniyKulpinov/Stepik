@@ -4,6 +4,10 @@ public abstract class Tool implements Workable {
 
     public Tool tool;
 
+    public void setTool(Tool tool) {
+        this.tool = tool;
+    }
+
     public Tool() {
     }
 
