@@ -1,6 +1,6 @@
 package AdditionalTask6;
 
-public class Knife extends Tool implements Workable {
+public class Knife extends Tool {
 
     public Knife(Tool tool) {
         this.tool = tool;
